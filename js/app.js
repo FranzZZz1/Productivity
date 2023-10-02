@@ -3532,6 +3532,7 @@
             const secondLinePosition = document.querySelector(".hero__line--4").attributes.y1.nodeValue;
             function setActiveThumb(activeIndex) {
                 const allThumbs = document.querySelectorAll(".hero__thumb");
+                if (!allThumbs || !firstLinePosition || !secondLinePosition) return;
                 allThumbs.forEach(((thumb, index) => {
                     index += 1;
                     const stat = document.querySelector(`.hero__thumb-stat--${index}`);
@@ -3578,6 +3579,62 @@
                 }
             });
         }
+        if (document.querySelector(".resources__slider")) {
+            let swiperSpeed = 600;
+            new swiper_core_Swiper(".resources__slider", {
+                modules: [ Navigation, Autoplay, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                centeredSlides: true,
+                speed: swiperSpeed,
+                allowTouchMove: true,
+                spaceBetween: 40,
+                navigation: {
+                    prevEl: ".resources__button-prev",
+                    nextEl: ".resources__button-next"
+                },
+                pagination: {
+                    el: ".resources__pagination",
+                    type: "bullets",
+                    clickable: true
+                }
+            });
+        }
+        if (document.querySelector(".testimonials__slider")) {
+            let swiperSpeed = 600;
+            new swiper_core_Swiper(".testimonials__slider", {
+                modules: [ Navigation, Autoplay, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                centeredSlides: true,
+                speed: swiperSpeed,
+                allowTouchMove: true,
+                spaceBetween: 16,
+                autoplay: {
+                    delay: 4e3,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".testimonials__pagination",
+                    type: "bullets",
+                    clickable: true
+                },
+                breakpoints: {
+                    1055: {
+                        centeredSlides: true,
+                        slidesPerView: 2,
+                        spaceBetween: 64
+                    },
+                    786: {
+                        centeredSlides: true,
+                        slidesPerView: 2,
+                        spaceBetween: 32
+                    }
+                }
+            });
+        }
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3591,6 +3648,106 @@
         mql.addEventListener("change", (function() {
             if (mql.matches) previewContainer.insertBefore(previewSlider, previewButtons); else previewContainer.insertBefore(previewButtons, previewSlider);
         }));
+    }));
+    class Accordion {
+        constructor(element, options) {
+            let defaultOptions = {
+                timingFunction: "ease-out",
+                duration: ".4s",
+                multiSelectable: false,
+                activeClass: "tab--active"
+            };
+            const mergedOptions = Object.assign({}, defaultOptions, options);
+            if (!options.tabs) throw TypeError("tabs undefined");
+            if (!options.panels) throw TypeError("panels undefined");
+            const tabs = Array.from(element.querySelectorAll(options.tabs));
+            const panels = Array.from(element.querySelectorAll(options.panels));
+            const subscriptions = [ ...tabs.map((tab => attachEvent(tab, "click", this.handleTabClick.bind(this)))), attachEvent(window, "resize", this.handleResize.bind(this)) ];
+            this.element = element;
+            this.tabs = tabs;
+            this.panels = panels;
+            this.options = mergedOptions;
+            this.subscriptions = subscriptions;
+            this.expanded = new Set;
+            this.prepareAttributes();
+        }
+        destroy() {
+            this.subscriptions.forEach((subscription => {
+                subscription.unsubscribe();
+            }));
+        }
+        handleTabClick(event) {
+            const tab = event.currentTarget;
+            const tabIndex = this.tabs.indexOf(tab);
+            this.toggleItem(tabIndex, !this.expanded.has(tabIndex));
+            event.preventDefault();
+        }
+        handleResize() {
+            this.bindWindowResizeHandler();
+        }
+        prepareAttributes() {
+            const randomId = "accordion-" + Math.random().toString(36).slice(2);
+            this.tabs.forEach(((tab, index) => {
+                tab.setAttribute("id", `${randomId}-tab-${index}`);
+                tab.setAttribute("aria-expanded", "false");
+                tab.setAttribute("aria-controls", `${randomId}-panel-${index}`);
+            }));
+            this.panels.forEach(((panel, index) => {
+                panel.setAttribute("id", `${randomId}-panel-${index}`);
+                panel.setAttribute("aria-hidden", "true");
+                panel.style.boxSizing = "border-box";
+                panel.style.overflow = "hidden";
+                panel.style.maxHeight = "0px";
+            }));
+        }
+        toggleItem(itemIndex, expand, {noTransition = false} = {}) {
+            const isExpanded = this.expanded.has(itemIndex);
+            if (expand === isExpanded) return;
+            const updateItemAttribute = (itemIndex, expand) => {
+                const targetTab = this.tabs[itemIndex];
+                const targetPanel = this.panels[itemIndex];
+                targetTab.setAttribute("aria-expanded", String(expand));
+                targetPanel.setAttribute("aria-hidden", String(!expand));
+                targetPanel.style.maxHeight = expand ? targetPanel.children[0].clientHeight + "px" : "0px";
+                targetPanel.style.visibility = expand ? "visible" : "hidden";
+                targetPanel.style.transition = noTransition ? "" : `max-height ${this.options.timingFunction} ${this.options.duration}, visibility ${this.options.duration}`;
+                this.expanded[expand ? "add" : "delete"](itemIndex);
+                //! custom
+                                const link = targetPanel.querySelector(".accordion__link");
+                expand ? targetTab.classList.add(this.options.activeClass) : targetTab.classList.remove(this.options.activeClass);
+                expand ? link.removeAttribute("tabindex") : link.setAttribute("tabindex", "-1");
+            };
+            if (!this.options.multiSelectable && !isExpanded) this.expanded.forEach((index => updateItemAttribute(index, false)));
+            updateItemAttribute(itemIndex, expand);
+        }
+        bindWindowResizeHandler() {
+            this.expanded.forEach((index => {
+                const panel = this.panels[index];
+                const resizedHeight = panel.children[0].clientHeight;
+                panel.style.maxHeight = resizedHeight + "px";
+            }));
+        }
+    }
+    function attachEvent(element, event, handler, options) {
+        element.addEventListener(event, handler, options);
+        return {
+            unsubscribe() {
+                element.removeEventListener(event, handler);
+            }
+        };
+    }
+    Array.from(document.querySelectorAll(".js-accordion")).forEach((el => {
+        const accordion = new Accordion(el, {
+            tabs: ".js-accordion-tab",
+            panels: ".js-accordion-panel",
+            multiSelectable: false,
+            timingFunction: "ease-in",
+            duration: ".25s",
+            activeClass: "tab--active"
+        });
+        accordion.toggleItem(0, true, {
+            noTransition: false
+        });
     }));
     window["FLS"] = true;
     isWebp();

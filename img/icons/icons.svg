@@ -1,4 +1,16 @@
-<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 7 8" id="arrow" xmlns="http://www.w3.org/2000/svg">
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 69 69" id="about-1" xmlns="http://www.w3.org/2000/svg">
+<circle cx="34.5" cy="34.5" r="34.5"/>
+<path d="M27 31.8727V43H31.4211L34 41L36.5789 43H41V31.8727L34 26L27 31.8727Z" stroke-width="2.5"/>
+</symbol><symbol viewBox="0 0 69 69" id="about-2" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="34.5" cy="34.5" r="34.5"/>
+  <path d="M40.7544 42H33.0877H30.1994H23V31.9496V28H33.0877L34.7018 31.1613H40.7544V32.9677M40.7544 42L46 32.9677H40.7544M40.7544 42V32.9677" stroke-width="2.5"/>
+</symbol><symbol viewBox="0 0 69 69" id="about-3" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="34.5" cy="34.5" r="34.5"/>
+  <path d="M26 27V31.9496V38.5H28.2811L29.5 42L33 38.5H37.7018H43.7544V32.9677V27H41H36.5H26Z" stroke-width="2.5"/>
+</symbol><symbol viewBox="0 0 69 69" id="about-4" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="34.5" cy="34.5" r="34.5"/>
+  <path d="M26 36.9677V42.5H28.2811H33H37.7018H43.2544V36.9677M30.7544 30L34.7544 27M38.7544 30L34.7544 27M34.7544 27V37.5" stroke-width="2.5"/>
+</symbol><symbol viewBox="0 0 7 8" id="arrow" xmlns="http://www.w3.org/2000/svg">
 <path d="M6 2.73354C6.66667 3.11844 6.66667 4.08069 6 4.46559L1.5 7.06367C0.833333 7.44857 0 6.96744 0 6.19764V1.00149C0 0.231691 0.833333 -0.249434 1.5 0.135467L6 2.73354Z"/>
 </symbol><symbol viewBox="0 0 9 17" id="fb" xmlns="http://www.w3.org/2000/svg">
 <path d="M5.65597 17V9.24548H8.22501L8.60969 6.2234H5.65597V4.294C5.65597 3.41904 5.89578 2.82278 7.13417 2.82278L8.71368 2.82208V0.119112C8.44051 0.0822826 7.5029 -1.65981e-08 6.41206 -1.65981e-08C4.13475 -1.65981e-08 2.57564 1.40836 2.57564 3.9947V6.2234H-2.3404e-08V9.24548H2.57564V17H5.65597Z"/>
