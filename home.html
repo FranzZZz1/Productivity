@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231002202104" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20231104223839" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,42 +16,85 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="container header__container">
-				<div class="header__left">
-					<a href="#" class="logo header__logo">
+				<div class="left header__left">
+					<a class="logo header__logo">
 						<img src="img/main/header/logo.svg" alt="logo - round" />
 					</a>
 
-					<nav class="nav header__nav">
-						<ul class="nav__list list-reset">
-							<li class="nav__item">
-								<a href="#" class="nav__link">Home</a>
-							</li>
-							<li class="nav__item">
-								<a href="#" class="nav__link">Blog</a>
-							</li>
-							<li class="nav__item">
-								<a href="#" class="nav__link">Features</a>
-							</li>
-							<li class="nav__item">
-								<a href="#" class="nav__link">Pricing</a>
-							</li>
-							<li class="nav__item">
-								<a href="#" class="nav__link">Documentation</a>
-							</li>
-						</ul>
-					</nav>
+					<button class="header__burger burger btn-reset">
+						<span class="burger__line"></span>
+					</button>
+
+					<div class="header__menu header__menu--mobile">
+						<nav class="nav header__nav">
+							<ul class="nav__list list-reset">
+								<li class="nav__item">
+									<a href="#" class="nav__link">Home</a>
+								</li>
+								<li class="nav__item">
+									<a href="#" class="nav__link">Blog</a>
+								</li>
+								<li class="nav__item">
+									<a href="#" class="nav__link">Features</a>
+								</li>
+								<li class="nav__item">
+									<a href="#" class="nav__link">Pricing</a>
+								</li>
+								<li class="nav__item">
+									<a href="#" class="nav__link">Documentation</a>
+								</li>
+							</ul>
+						</nav>
+
+						<div class="right header__right header__right--mobile">
+							<ul class="social header__social list-reset">
+								<li class="social__item">
+									<a href="#" class="social__link" title="Facebook" aria-label="go to facebook">
+										<svg class="social__icon social__icon--fb">
+											<use xlink:href="img/icons/icons.svg#fb"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link" title="Telegram" aria-label="go to telegram">
+										<svg width="15" height="13" viewBox="0 0 15 13" class="social__icon social__icon--tg" xmlns="http://www.w3.org/2000/svg">
+											<path d="M5.81972 12.0232C5.38191 12.0232 5.4563 11.8651 5.3053 11.4664L4.01782 7.41344L13.9283 1.78983" fill="#9399AB" />
+											<path d="M5.81982 12.0232C6.15768 12.0232 6.30696 11.8754 6.49554 11.7L8.29744 10.0241L6.04979 8.72772" fill="#70788E" />
+											<path d="M6.04945 8.72806L11.4957 12.5768C12.1172 12.9048 12.5657 12.735 12.7205 12.0249L14.9374 2.03246C15.1644 1.16206 14.5906 0.76729 13.996 1.02547L0.978404 5.82666C0.0898302 6.16756 0.0950105 6.64173 0.816436 6.85301L4.15705 7.85032L11.8909 3.18335C12.256 2.97158 12.5911 3.08543 12.3161 3.31891" fill="#B6BAC7" />
+										</svg>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link" title="Twitter" aria-label="go to twitter">
+										<svg class="social__icon social__icon--tw">
+											<use xlink:href="img/icons/icons.svg#tw"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link" title="Medium" aria-label="go to medium">
+										<svg class="social__icon social__icon--m">
+											<use xlink:href="img/icons/icons.svg#m"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+
+							<a href="#" class="btn btn--blue header__link">Get started</a>
+						</div>
+					</div>
 				</div>
-				<div class="header__right">
+				<div class="right header__right">
 					<ul class="social header__social list-reset">
 						<li class="social__item">
-							<a href="#" class="social__link">
+							<a href="#" class="social__link" title="Facebook" aria-label="go to facebook">
 								<svg class="social__icon social__icon--fb">
 									<use xlink:href="img/icons/icons.svg#fb"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="social__item">
-							<a href="#" class="social__link">
+							<a href="#" class="social__link" title="Telegram" aria-label="go to telegram">
 								<svg width="15" height="13" viewBox="0 0 15 13" class="social__icon social__icon--tg" xmlns="http://www.w3.org/2000/svg">
 									<path d="M5.81972 12.0232C5.38191 12.0232 5.4563 11.8651 5.3053 11.4664L4.01782 7.41344L13.9283 1.78983" fill="#9399AB" />
 									<path d="M5.81982 12.0232C6.15768 12.0232 6.30696 11.8754 6.49554 11.7L8.29744 10.0241L6.04979 8.72772" fill="#70788E" />
@@ -60,14 +103,14 @@
 							</a>
 						</li>
 						<li class="social__item">
-							<a href="#" class="social__link">
+							<a href="#" class="social__link" title="Twitter" aria-label="go to twitter">
 								<svg class="social__icon social__icon--tw">
 									<use xlink:href="img/icons/icons.svg#tw"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="social__item">
-							<a href="#" class="social__link">
+							<a href="#" class="social__link" title="Medium" aria-label="go to medium">
 								<svg class="social__icon social__icon--m">
 									<use xlink:href="img/icons/icons.svg#m"></use>
 								</svg>
@@ -81,6 +124,7 @@
 		</header>
 
 		<main class="main">
+			<h1 class="visually-hidden">Productivity</h1>
 			<section class="hero">
 				<div class="hero__content">
 					<div class="hero__slider swiper">
@@ -88,11 +132,11 @@
 							<div class="hero__slide swiper-slide">
 								<div class="hero__slide-content slide-content">
 									<span class="slide-content__span section-span">plan your life</span>
-									<h2 class="slide-content__title">
+									<h2 class="slide-content__title title title--lg">
 										Increase your
 										<span class="slide-content__bold title-bold">productivity</span>
 									</h2>
-									<p class="slide-content__subtitle">
+									<p class="slide-content__subtitle subtitle subtitle--lg">
 										Brute laoreet efficiendi id his, ea illum nonumes
 										luptatum pro. Usu atqui laudem an, insolens
 										gubergren similique est cu. Et vel modus congue
@@ -110,11 +154,11 @@
 							<div class="hero__slide swiper-slide">
 								<div class="hero__slide-content slide-content">
 									<span class="slide-content__span section-span">plan your life</span>
-									<h2 class="slide-content__title">
+									<h2 class="slide-content__title title title--lg">
 										Increase your
 										<span class="slide-content__bold title-bold">productivity</span>
 									</h2>
-									<p class="slide-content__subtitle">
+									<p class="slide-content__subtitle subtitle subtitle--lg">
 										Brute laoreet efficiendi id his, ea illum nonumes
 										luptatum pro. Usu atqui laudem an, insolens
 										gubergren similique est cu. Et vel modus congue
@@ -132,11 +176,11 @@
 							<div class="hero__slide swiper-slide">
 								<div class="hero__slide-content slide-content">
 									<span class="slide-content__span section-span">plan your life</span>
-									<h2 class="slide-content__title">
+									<h2 class="slide-content__title title title--lg">
 										Increase your
 										<span class="slide-content__bold title-bold">productivity</span>
 									</h2>
-									<p class="slide-content__subtitle">
+									<p class="slide-content__subtitle subtitle subtitle--lg">
 										Brute laoreet efficiendi id his, ea illum nonumes
 										luptatum pro. Usu atqui laudem an, insolens
 										gubergren similique est cu. Et vel modus congue
@@ -154,11 +198,11 @@
 							<div class="hero__slide swiper-slide">
 								<div class="hero__slide-content slide-content">
 									<span class="slide-content__span section-span">plan your life</span>
-									<h2 class="slide-content__title">
+									<h2 class="slide-content__title title title--lg">
 										Increase your
 										<span class="slide-content__bold title-bold">productivity</span>
 									</h2>
-									<p class="slide-content__subtitle">
+									<p class="slide-content__subtitle subtitle subtitle--lg">
 										Brute laoreet efficiendi id his, ea illum nonumes
 										luptatum pro. Usu atqui laudem an, insolens
 										gubergren similique est cu. Et vel modus congue
@@ -173,9 +217,8 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="hero__slider-pagination swiper-pagination"></div>
 					</div>
+					<div class="hero__slider-pagination swiper-pagination"></div>
 				</div>
 
 				<div class="hero__bg">
@@ -328,37 +371,38 @@
 
 			<section class="partners">
 				<div class="container partners__container">
+					<h2 class="visually-hidden">Partners</h2>
 					<ul class="partners__list list-reset">
 						<li class="partners__item">
-							<a href="#" class="partners__link" aria-label="go to 'Bitbucket' website">
+							<a href="#" class="partners__link" aria-label="go to Bitbucket" title="Bitbucket">
 								<svg class="partners__icon">
 									<use xlink:href="img/icons/icons.svg#partners-1"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="partners__item">
-							<a href="#" class="partners__link" aria-label="go to 'Apple' website">
+							<a href="#" class="partners__link" aria-label="go to Apple website" title="Apple">
 								<svg class="partners__icon">
 									<use xlink:href="img/icons/icons.svg#partners-2"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="partners__item">
-							<a href="#" class="partners__link" aria-label="go to 'Facebook' website">
+							<a href="#" class="partners__link" aria-label="go to Facebook" title="Facebook">
 								<svg class="partners__icon">
 									<use xlink:href="img/icons/icons.svg#partners-3"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="partners__item">
-							<a href="#" class="partners__link" aria-label="go to 'Atlassian' website">
+							<a href="#" class="partners__link" aria-label="go to Atlassian website" title="Atlassian">
 								<svg class="partners__icon">
 									<use xlink:href="img/icons/icons.svg#partners-4"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="partners__item">
-							<a href="#" class="partners__link" aria-label="go to 'Audi' website">
+							<a href="#" class="partners__link" aria-label="go to Audi website" title="Audi">
 								<svg class="partners__icon">
 									<use xlink:href="img/icons/icons.svg#partners-5"></use>
 								</svg>
@@ -372,12 +416,12 @@
 				<div class="container manage__container">
 					<div class="manage__content">
 						<span class="manage__span section-span">Desktop and mobile app</span>
-						<h2 class="manage__title">
+						<h2 class="manage__title title title--md">
 							<span class="manage__bold title-bold">Plan</span>
 							and
 							<span class="manage__bold title-bold">manage</span>
 						</h2>
-						<p class="manage__subtitle">
+						<p class="manage__subtitle subtitle subtitle--lg">
 							Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
 							Usu atqui laudem an, insolens gubergren similique est cu. Et vel
 							modus congue vituperata. Solum patrioque no sea. Mea ex malis
@@ -444,18 +488,18 @@
 				</div>
 			</section>
 
-			<section class="stats full-width-split-screen">
+			<section class="stats">
 				<div class="stats__accent">
 					<img class="stats__img" src="img/stats/1.svg" alt="" />
 					<span class="stats__span">89%</span>
-					<p class="stats__text">
+					<h2 class="stats__title">
 						Customers who have increased their productivity
-					</p>
+					</h2>
 				</div>
 				<div class="stats__primary">
 					<img class="stats__img" src="img/stats/2.svg" alt="" />
 					<span class="stats__span">3123</span>
-					<p class="stats__text">Users who have used our application</p>
+					<h2 class="stats__title">Users who have used our application</h2>
 				</div>
 			</section>
 
@@ -465,20 +509,21 @@
 					<h2 class="section-title resources__title">Start reading our blog</h2>
 				</div>
 				<div class="container resources__container">
+					<button class="resources__button-prev btn-reset">
+						<svg xmlns="http://www.w3.org/2000/svg" width="27" height="19" viewBox="0 0 27 19" fill="none">
+							<path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
 					<div class="resources__slider swiper">
-						<button class="resources__button-prev btn-reset">
-							<svg xmlns="http://www.w3.org/2000/svg" width="27" height="19" viewBox="0 0 27 19" fill="none">
-								<path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</button>
-
 						<div class="resources__wrapper swiper-wrapper">
-							<div class="resources__slide swiper-slide">
+							<div class="resources__slide swiper-slide 0">
 								<div class="resources__content">
 									<div class="resources__images">
-										<ul class="resources__list list-reset">
-											<li class="resources__item">
-												<div class="resources__img"></div>
+										<div class="resources__list list-reset">
+											<div class="resources__item">
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/1.webp" type="image/webp"><img src="img/resources/1.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -486,10 +531,13 @@
 														<path d="M36.1304 35.9666L41.0886 40.9189" stroke="#A7AAC6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 													</svg>
 												</button>
-											</li>
+											</div>
 
-											<li class="resources__item">
-												<div class="resources__img"></div>
+											<div class="resources__item">
+												<!-- <div class="resources__img"></div> -->
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/2.webp" type="image/webp"><img src="img/resources/2.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -497,10 +545,13 @@
 														<path d="M36.1304 35.9666L41.0886 40.9189" stroke="#A7AAC6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 													</svg>
 												</button>
-											</li>
+											</div>
 
-											<li class="resources__item">
-												<div class="resources__img"></div>
+											<div class="resources__item">
+												<!-- <div class="resources__img"></div> -->
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/3.webp" type="image/webp"><img src="img/resources/3.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -508,11 +559,11 @@
 														<path d="M36.1304 35.9666L41.0886 40.9189" stroke="#A7AAC6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 													</svg>
 												</button>
-											</li>
-										</ul>
+											</div>
+										</div>
 									</div>
 									<div class="resources__text">
-										<h3 class="resources__item-title">
+										<h3 class="resources__item-title title title--md">
 											How to start planning
 										</h3>
 										<p class="resources__item-text">
@@ -535,12 +586,14 @@
 								</div>
 							</div>
 
-							<div class="resources__slide swiper-slide">
+							<div class="resources__slide swiper-slide 1">
 								<div class="resources__content">
 									<div class="resources__images">
 										<ul class="resources__list list-reset">
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/1.webp" type="image/webp"><img src="img/resources/1.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -551,7 +604,9 @@
 											</li>
 
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/2.webp" type="image/webp"><img src="img/resources/2.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -562,7 +617,9 @@
 											</li>
 
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/3.webp" type="image/webp"><img src="img/resources/3.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -574,7 +631,7 @@
 										</ul>
 									</div>
 									<div class="resources__text">
-										<h3 class="resources__item-title">
+										<h3 class="resources__item-title title title--md">
 											How to start planning
 										</h3>
 										<p class="resources__item-text">
@@ -597,12 +654,14 @@
 								</div>
 							</div>
 
-							<div class="resources__slide swiper-slide">
+							<div class="resources__slide swiper-slide 2">
 								<div class="resources__content">
 									<div class="resources__images">
 										<ul class="resources__list list-reset">
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/1.webp" type="image/webp"><img src="img/resources/1.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -613,7 +672,9 @@
 											</li>
 
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/2.webp" type="image/webp"><img src="img/resources/2.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -624,7 +685,9 @@
 											</li>
 
 											<li class="resources__item">
-												<div class="resources__img"></div>
+												<div class="resources__img-ibg">
+													<picture><source srcset="img/resources/3.webp" type="image/webp"><img src="img/resources/3.jpg" alt="" /></picture>
+												</div>
 												<button class="resources__img-button btn-reset">
 													<svg xmlns="http://www.w3.org/2000/svg" width="66" height="65" viewBox="0 0 66 65" fill="none" class="resources__icon">
 														<ellipse cx="32.6598" cy="32.5001" rx="32.5118" ry="32.473" fill="white" />
@@ -636,7 +699,7 @@
 										</ul>
 									</div>
 									<div class="resources__text">
-										<h3 class="resources__item-title">
+										<h3 class="resources__item-title title title--md">
 											How to start planning
 										</h3>
 										<p class="resources__item-text">
@@ -659,22 +722,23 @@
 								</div>
 							</div>
 						</div>
-
-						<button class="resources__button-next btn-reset">
-							<svg xmlns="http://www.w3.org/2000/svg" width="27" height="19" viewBox="0 0 27 19" fill="none">
-								<path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</button>
 					</div>
+					<button class="resources__button-next btn-reset">
+						<svg xmlns="http://www.w3.org/2000/svg" width="27" height="19" viewBox="0 0 27 19" fill="none">
+							<path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="resources__pagination swiper-pagination"></div>
 				</div>
-				<div class="resources__pagination swiper-pagination"></div>
 			</section>
 
 			<section class="testimonials">
-				<div class="testimonials__container">
+				<div class="container testimonials__container">
 					<div class="testimonials__text">
 						<span class="section-span testimonials__span">TESTIMONIALS</span>
-						<h2 class="testimonials__title">Customers's quotes</h2>
+						<h2 class="testimonials__title title title--md">
+							Customers's quotes
+						</h2>
 						<p class="testimonials__subtitle">
 							Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
 							Usu atqui laudem an.
@@ -722,6 +786,20 @@
 											Quidam vocibus eum ne, erat consectetuer
 											voluptatibus ut nam. Eu usu vidit tractatos,
 											vero tractatos ius an, in mel diceret persecuti.
+											voluptatibus ut nam. Eu usu vidit tractatos,
+											vero tractatos ius an, in mel diceret persecuti.
+										</p>
+										<div class="testimonials__slide-avatar"></div>
+									</div>
+								</div>
+
+								<div class="testimonials__slide swiper-slide">
+									<div class="testimonials__slide-content">
+										<p class="testimonials__slide-text">
+											Quidam vocibus eum ne, erat consectetuer
+											voluptatibus ut nam. Eu usu vidit tractatos,
+											vero tractatos ius an, in mel diceret persecuti.
+											voluptatibus ut nam. Eu usu vidit tractatos
 										</p>
 										<div class="testimonials__slide-avatar"></div>
 									</div>
@@ -744,17 +822,11 @@
 											Quidam vocibus eum ne, erat consectetuer
 											voluptatibus ut nam. Eu usu vidit tractatos,
 											vero tractatos ius an, in mel diceret persecuti.
-										</p>
-										<div class="testimonials__slide-avatar"></div>
-									</div>
-								</div>
-
-								<div class="testimonials__slide swiper-slide">
-									<div class="testimonials__slide-content">
-										<p class="testimonials__slide-text">
-											Quidam vocibus eum ne, erat consectetuer
 											voluptatibus ut nam. Eu usu vidit tractatos,
-											vero tractatos ius an, in mel diceret persecuti.
+											vero tractatos ius an, in mel diceret
+											persecuti.voluptatibus ut nam. Eu usu vidit
+											tractatos, vero tractatos ius an, in mel diceret
+											persecuti.
 										</p>
 										<div class="testimonials__slide-avatar"></div>
 									</div>
@@ -922,14 +994,116 @@
 					</div>
 				</div>
 			</section>
+			<section class="plan">
+				<div class="container plan__container">
+					<span class="section-span plan__span">Plan your life</span>
+					<h2 class="plan__title title title--lg">
+						Get <span class="plan__title-bold title-bold">started</span> now
+					</h2>
+					<p class="plan__subtitle subtitle subtitle--lg">
+						Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu
+						atqui laudem an, insolens gubergren similique est cu. Et vel modus
+						congue vituperata.
+					</p>
+					<div class="plan__links">
+						<a href="#" class="btn plan__link plan__link--white" aria-label="go to prices">View pricing</a>
+						<a href="#" class="btn plan__link plan__link--transparent" aria-label="go to documentation">Read documentation</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="newsletter">
+				<div class="container newsletter__container">
+					<div class="newsletter__content">
+						<div class="newsletter__text">
+							<h2 class="newsletter__title">Sign up for newsletter</h2>
+							<p class="newsletter__subtitle">
+								Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,
+								homero alterum.
+							</p>
+						</div>
+						<form class="newsletter__form">
+							<input class="newsletter__email input-reset" type="email" placeholder="Email address" />
+							<button class="newsletter__button btn-reset" type="submit">
+								Save me
+							</button>
+						</form>
+					</div>
+				</div>
+			</section>
 
 		</main>
 		<footer class="footer">
-			<div class="container footer__container"></div>
+			<div class="container footer__container">
+				<div class="left footer__left">
+					<a class="logo footer__logo">
+						<img src="img/main/header/logo.svg" alt="logo - round" />
+					</a>
+
+					<nav class="nav footer__nav">
+						<ul class="nav__list list-reset">
+							<li class="nav__item">
+								<a href="#" class="nav__link">Home</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Blog</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Features</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Pricing</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Documentation</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="right footer__right">
+					<ul class="social footer__social list-reset">
+						<li class="social__item">
+							<a href="#" class="social__link" title="Facebook" aria-label="go to facebook">
+								<svg class="social__icon social__icon--fb">
+									<use xlink:href="img/icons/icons.svg#fb"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link" title="Telegram" aria-label="go to telegram">
+								<svg width="15" height="13" viewBox="0 0 15 13" class="social__icon social__icon--tg" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.81972 12.0232C5.38191 12.0232 5.4563 11.8651 5.3053 11.4664L4.01782 7.41344L13.9283 1.78983" fill="#9399AB" />
+									<path d="M5.81982 12.0232C6.15768 12.0232 6.30696 11.8754 6.49554 11.7L8.29744 10.0241L6.04979 8.72772" fill="#70788E" />
+									<path d="M6.04945 8.72806L11.4957 12.5768C12.1172 12.9048 12.5657 12.735 12.7205 12.0249L14.9374 2.03246C15.1644 1.16206 14.5906 0.76729 13.996 1.02547L0.978404 5.82666C0.0898302 6.16756 0.0950105 6.64173 0.816436 6.85301L4.15705 7.85032L11.8909 3.18335C12.256 2.97158 12.5911 3.08543 12.3161 3.31891" fill="#B6BAC7" />
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link" title="Twitter" aria-label="go to twitter">
+								<svg class="social__icon social__icon--tw">
+									<use xlink:href="img/icons/icons.svg#tw"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link" title="Medium" aria-label="go to medium">
+								<svg class="social__icon social__icon--m">
+									<use xlink:href="img/icons/icons.svg#m"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+
+					<a href="#" class="btn btn--blue footer__link">Get started</a>
+				</div>
+			</div>
+			<div class="container footer__container">
+				<p class="footer__copy">Copyright © 2018 by Random siteCopyright</p>
+			</div>
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20231002202104"></script>
+	<script src="js/app.min.js?_v=20231104223839"></script>
 
 </body>
 
