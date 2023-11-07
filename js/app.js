@@ -3679,30 +3679,19 @@
         });
     }
     function initSliders() {
-        function updateAccessibility(activeIndex, slidesClass = null, linksClass = null, btnsClass = null, imgBtnsClass = null) {
-            if (!slidesClass) return;
-            const slides = Array.from(document.querySelectorAll(slidesClass));
-            slides.forEach(((slide, index) => {
+        function updateAccessibility(activeIndex, slides = null, elems = null) {
+            const allSlides = Array.from(document.querySelectorAll(slides));
+            if (!allSlides) return;
+            allSlides.forEach(((slide, index) => {
                 const active = index === activeIndex;
                 const tabindexValue = active ? 0 : -1;
-                if (linksClass) {
-                    const links = slide.querySelectorAll(linksClass);
-                    links.forEach((link => {
-                        tabindexValue === -1 ? link.setAttribute("tabindex", tabindexValue) : link.removeAttribute("tabindex");
+                if (!Array.isArray(elems)) elems = [ elems ];
+                elems.forEach((el => {
+                    const reqElems = slide.querySelectorAll(el);
+                    reqElems.forEach((el => {
+                        tabindexValue === -1 ? el.setAttribute("tabindex", tabindexValue) : el.removeAttribute("tabindex");
                     }));
-                }
-                if (btnsClass) {
-                    const buttons = slide.querySelectorAll(btnsClass);
-                    buttons.forEach((btn => {
-                        tabindexValue === -1 ? btn.setAttribute("tabindex", tabindexValue) : btn.removeAttribute("tabindex");
-                    }));
-                }
-                if (imgBtnsClass) {
-                    const imgButtons = slide.querySelectorAll(imgBtnsClass);
-                    imgButtons.forEach((btn => {
-                        tabindexValue === -1 ? btn.setAttribute("tabindex", tabindexValue) : btn.removeAttribute("tabindex");
-                    }));
-                }
+                }));
             }));
         }
         if (document.querySelector(".preview__slider")) {
@@ -3810,12 +3799,12 @@
                     init: function() {
                         const activeSlideIndex = this.activeIndex + 1;
                         setActiveThumb(activeSlideIndex);
-                        updateAccessibility(this.activeIndex, ".hero__slide", null, ".slide-content__play", null);
+                        updateAccessibility(this.activeIndex, ".hero__slide", ".slide-content__play");
                     },
                     slideChange: function() {
                         const activeSlideIndex = heroSlider.activeIndex + 1;
                         setActiveThumb(activeSlideIndex);
-                        updateAccessibility(this.activeIndex, ".hero__slide", null, ".slide-content__play", null);
+                        updateAccessibility(this.activeIndex, ".hero__slide", ".slide-content__play");
                     }
                 }
             });
@@ -3846,10 +3835,10 @@
                 },
                 on: {
                     init: function() {
-                        updateAccessibility(this.activeIndex, ".resources__slide", ".resources__link", ".resources__button", ".resources__img-button");
+                        updateAccessibility(this.activeIndex, ".resources__slide", [ ".resources__link", ".resources__button", ".resources__img-button" ]);
                     },
                     slideChange: function() {
-                        updateAccessibility(this.activeIndex, ".resources__slide", ".resources__link", ".resources__button", ".resources__img-button");
+                        updateAccessibility(this.activeIndex, ".resources__slide", [ ".resources__link", ".resources__button", ".resources__img-button" ]);
                     }
                 }
             });
