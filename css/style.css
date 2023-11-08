@@ -858,6 +858,9 @@ a {
 }
 
 .hero__slider-pagination {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   bottom: 1.75rem;
 }
 
@@ -2348,7 +2351,10 @@ a {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 100%;
 }
 
