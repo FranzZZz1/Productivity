@@ -3765,6 +3765,9 @@
                     index += 1;
                     const stat = document.querySelector(`.hero__thumb-stat--${index}`);
                     const line = document.querySelector(`.hero__line--${index}`);
+                    thumb.addEventListener("click", (() => {
+                        heroSlider.slideTo(index - 1);
+                    }));
                     if (index === activeIndex) {
                         thumb.classList.add("active");
                         stat.style.opacity = 1;
