@@ -1661,6 +1661,7 @@ a {
 }
 
 .testimonials__slider {
+  position: relative;
   max-width: 100%;
   margin-left: -25%;
   padding-bottom: 5rem;
